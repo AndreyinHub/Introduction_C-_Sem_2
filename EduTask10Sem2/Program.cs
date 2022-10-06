@@ -1,20 +1,29 @@
-﻿// Задача 10: Выбор второй цифры трёхзначнго числа.
+﻿// Задача 13: Вывод 3 цифры числа если есть.
 
 Console.Clear();
 
-Console.WriteLine("Введите, пожалуйста трехзначное число. ");
-string InNumA = Console.ReadLine() ?? "";
-int numA = int.Parse(InNumA);
+//Console.WriteLine("Введите, пожалуйста Ваше число: ");
+//string InNumA = Console.ReadLine() ?? "";
+//int numA = int.Parse(InNumA);
 
-int a1 = 0, a2 = 0;
-
-if (numA < 999)
+int varA;
+while (true)
 {
-    if (numA > 99)
+    Console.Write("Введите число: ");
+    if (int.TryParse(Console.ReadLine(), out varA))
+        break;
+    Console.WriteLine($"Ошибка ввода!");
+}
+
+//int a1 = 0, a2 = 0;
+
+if (varA <= 999)
+{
+    if (varA > 99)
     {
-        a1 = numA % 100;
-        a2 = a1 / 10;
-        Console.WriteLine(a2);
+        //a1 = varA % 100;
+        //a2 = a1 / 10;
+        Console.WriteLine($"{(varA % 100) / 10}");
     }
     else
     {
